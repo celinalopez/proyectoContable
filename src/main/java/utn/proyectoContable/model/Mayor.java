@@ -1,10 +1,9 @@
 package utn.proyectoContable.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "mayores")
 public class Mayor {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
