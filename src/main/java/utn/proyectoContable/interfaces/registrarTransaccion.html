@@ -12,8 +12,14 @@
     <p><a class="link-opacity-100" href="../interfaces/index.html">Volver al Inicio</a></p>
     <form>
         <div class="mb-3">
-            <label for="rubro" class="form-label">Rubro</label>
-            <input type="text" class="form-control" id="rubro">
+            <label for="rubro">Rubro:</label>
+            <select id="rubro" name="rubro">
+                <option value="activo">Activo</option>
+                <option value="pasivo">Pasivo</option>
+                <option value="pNeto">P.Neto</option>
+                <option value="ingreso">Ingreso</option>
+                <option value="egreso">Egreso</option>
+            </select>
         </div>
         <div class="mb-3">
             <label for="nroCuenta" class="form-label">Nro Cuenta</label>
