@@ -3,7 +3,7 @@ package utn.proyectoContable.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "plandecuentas")
+@Table(name = "planesdecuentas")
 public class PlanDeCuentas {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
