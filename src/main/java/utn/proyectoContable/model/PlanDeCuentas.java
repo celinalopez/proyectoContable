@@ -3,7 +3,7 @@ package utn.proyectoContable.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(schema = "plandecuenta")
+@Table(name = "plandecuentas")
 public class PlanDeCuentas {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
@@ -14,6 +14,15 @@ public class PlanDeCuentas {
     private String nroCuenta;
     @Column
     private String descripcion;
+
+    public PlanDeCuentas() {
+    }
+    public PlanDeCuentas(int id, String rubro, String nroCuenta, String descripcion) {
+        this.id = id;
+        this.rubro = rubro;
+        this.nroCuenta = nroCuenta;
+        this.descripcion = descripcion;
+    }
 
     public int getId() {
         return id;
@@ -45,5 +54,15 @@ public class PlanDeCuentas {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    @Override
+    public String toString() {
+        return "PlanDeCuentas{" +
+                "id=" + id +
+                ", rubro='" + rubro + '\'' +
+                ", nroCuenta='" + nroCuenta + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                '}';
     }
 }

@@ -3,14 +3,14 @@ package utn.proyectoContable.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import utn.proyectoContable.model.PlanDeCuentas;
-import utn.proyectoContable.repository.TodoRepository;
+import utn.proyectoContable.repository.PlanRepository;
 
 import java.util.List;
 
 @RestController
-public class TodoController {
+public class PlanController {
     @Autowired
-    private TodoRepository todoRepository;
+    private PlanRepository todoRepository;
 
     @GetMapping(value= "/")
     public String holaMundo(){
