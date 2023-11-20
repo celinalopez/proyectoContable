@@ -1,16 +1,17 @@
 package utn.proyectoContable.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import utn.proyectoContable.model.PlanDeCuentas;
-import utn.proyectoContable.repository.PlanRepository;
+import utn.proyectoContable.servicio.PlanServicio;
 
 import java.util.List;
 
 @RestController
 public class PlanController {
     @Autowired
-    private PlanRepository todoRepository;
+    private PlanServicio servicio;
 
     @GetMapping(value= "/")
     public String holaMundo(){
@@ -18,31 +19,45 @@ public class PlanController {
     }
 
     @GetMapping(value = "/plandecuentas")
-    public List<PlanDeCuentas> getPlanDeCuentas(){
-        return todoRepository.findAll();
+    public String listarPlanDeCuentas(Model modelo){
+        modelo.addAttribute("plandecuentas",servicio.listarPlanDeCuentas());
+        return "plandecuentas"; //retorna al archivo plandecuentas
     }
 
-    @PostMapping(value= "/saveplandecuentas")
-    public String savePlanDeCuentas(@RequestBody PlanDeCuentas plan){
-        todoRepository.save(plan);
-        return "Plan de cuentas guardado";
+    @PostMapping(value= "/plandecuentas/nuevo")
+    public String formCrearPlanDeCuentas(Model modelo){
+        PlanDeCuentas nuevoPlan = new PlanDeCuentas();
+        modelo.addAttribute("plandecuentas", nuevoPlan);
+        return "crear_plandecuentas";
     }
 
-    @PutMapping(value="/updateplandecuentas/{id}")
-    public String updatePlanDeCuentas(@PathVariable int id, @RequestBody PlanDeCuentas plan){
-        PlanDeCuentas planActualizado = todoRepository.findById(id).get();
-        planActualizado.setNroCuenta(plan.getNroCuenta());
-        planActualizado.setDescripcion(plan.getDescripcion());
-        planActualizado.setRubro(plan.getRubro());
-        todoRepository.save(planActualizado);
-        return "Plan de cuentas actualizado";
+    @PostMapping(value= "/plandecuentas")
+    public String guardarPlanDeCuentas(@ModelAttribute("plandecuentas") PlanDeCuentas planDeCuentas){
+        servicio.guardarPlanDeCuentas(planDeCuentas);
+        return "redirect:plandecuentas";
     }
 
-    @DeleteMapping(value = "/delete/{id}")
+    @GetMapping(value = "/estudiantes/editar/{id}")
+    public String formEditarPlanDeCuentas(@PathVariable int id, Model modelo){
+        modelo.addAttribute("plandecuentas", servicio.obtenerPlanDeCuentasPorId(id));
+        return "editar_plandecuentas";
+    }
+
+    @PostMapping(value="/plandecuentas/{id}")
+    public String actualizarPlanDeCuentas(@PathVariable int id, @ModelAttribute("plandecuentas") PlanDeCuentas plandecuentas, Model modelo){
+        PlanDeCuentas planExistente = servicio.obtenerPlanDeCuentasPorId(id);
+        planExistente.setId(id);
+        planExistente.setRubro(plandecuentas.getRubro());
+        planExistente.setDescripcion(plandecuentas.getDescripcion());
+        planExistente.setNroCuenta(plandecuentas.getNroCuenta());
+        servicio.updatePlanDeCuentas(planExistente);
+        return "redirect:/estudiantes";
+    }
+
+    @GetMapping(value = "/plandecuentas/{id}")
     public String deletePlanDeCuentas(@PathVariable int id){
-        PlanDeCuentas planBorrar = todoRepository.findById(id).get();
-        todoRepository.delete(planBorrar);
-        return "Plan de cuentas borrado";
+        servicio.deletePlanDeCuentas(id);
+        return "redirect:/estudiantes";
     }
 
 
