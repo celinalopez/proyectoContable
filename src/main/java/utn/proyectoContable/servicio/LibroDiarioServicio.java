@@ -1,8 +1,6 @@
 package utn.proyectoContable.servicio;
 
 import utn.proyectoContable.model.LibroDiario;
-import utn.proyectoContable.model.PlanDeCuentas;
-
 import java.util.List;
 
 public interface LibroDiarioServicio {
