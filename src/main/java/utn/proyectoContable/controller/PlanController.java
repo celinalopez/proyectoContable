@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import utn.proyectoContable.model.PlanDeCuentas;
 import utn.proyectoContable.servicio.PlanServicio;
 
-import java.util.List;
 
 @RestController
 public class PlanController {
