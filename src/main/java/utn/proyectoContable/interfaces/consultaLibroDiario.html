@@ -2,22 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Libro Diario</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../estilos/estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Libro Diario</title>
+<!-- CSS -->
+<link rel="stylesheet" href="../estilos/styles.css">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Consultar Libro Diario</h1>
-    <p><a class="link-opacity-100" href="../interfaces/index.html">Volver al Inicio</a></p>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Debe</th>
-            <th scope="col">Haber</th>
-        </tr>
-        </thead>
-    </table>
+
+<!-- NavBar Bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-lg">
+      <span><img src="../img/png-transparent-liberal-contabilidade-do-brasil-ltda-accounting-logo-organization-escrita-blue-text-service-removebg-preview.png" alt="logo CaC"></span>
+      <a class="navbar-brand" href="inicio.html">Contabilidad</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto"> <!-- ms-auto -->
+          <li class="nav-item">
+            <a class="nav-link" href="inicio.html#abm">Plan de Cuentas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inicio.html#asientos">Asientos - Libro Diario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inicio.html#libroMayor">Libro Mayor</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<br>
+<!-- Consultar Libro Diario -->
+<div class="text-center mt-3 mb-4">
+    <h2>Consultar Libro Diario</h2>       
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Debe</th>
+        <th scope="col">Haber</th>
+    </tr>
+    </thead>
+</table>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container-footer">
+      <a href="inicio.html" class="footer-item">Inicio</a>
+    </div>
+</footer>
+
 </body>
 </html>
