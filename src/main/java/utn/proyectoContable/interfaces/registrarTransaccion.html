@@ -2,34 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Transaccion</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../estilos/estilos.css">
 
+<!-- CSS -->
+<link rel="stylesheet" href="../estilos/styles.css">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Registrar Transaccion</h1>
-    <p><a class="link-opacity-100" href="../interfaces/index.html">Volver al Inicio</a></p>
-    <form>
-        <div class="mb-3">
-            <label for="rubro">Rubro:</label>
-            <select id="rubro" name="rubro">
-                <option value="activo">Activo</option>
-                <option value="pasivo">Pasivo</option>
-                <option value="pNeto">P.Neto</option>
-                <option value="ingreso">Ingreso</option>
-                <option value="egreso">Egreso</option>
-            </select>
+
+<!-- NavBar Bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-lg">
+      <span><img src="../img/png-transparent-liberal-contabilidade-do-brasil-ltda-accounting-logo-organization-escrita-blue-text-service-removebg-preview.png" alt="logo CaC"></span>
+      <a class="navbar-brand" href="inicio.html">Contabilidad</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto"> <!-- ms-auto -->
+          <li class="nav-item">
+            <a class="nav-link" href="inicio.html#abm">Plan de Cuentas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inicio.html#asientos">Asientos - Libro Diario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inicio.html#libroMayor">Libro Mayor</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+
+<!-- registrar transaccion -->
+
+<div class="text-center mt-3 mb-4">
+    <h2>Registrar Transaccion</h2>       
+</div>
+<form action="" class="formulario-tickets" id="formulario-tickets">
+    <div>    
+        <div class="row">
+            <div class="col-12 mt-3">
+                <input type="text" class="form-control" placeholder="Nro Cuenta" aria-label="Correo"s>
+            </div>
+            <div class="col-12 mt-3">
+                <input type="text" class="form-control" placeholder="Descripción" aria-label="Correo"s>
+            </div>
+            <div class="col-6 mt-3">
+                <label for="" class="ps-1">Rubro</label>
+                <select class="form-select select-tickets mt-2"  id="select-tickets" aria-label="Default select example">
+                    <option selected>Selecciona un Rubro</option>
+                    <option value="1">Activo</option>
+                    <option value="2">Pasivo</option>
+                    <option value="3">P.Neto</option>
+                    <option value="3">Ingreso</option>
+                    <option value="3">Egreso</option>
+                </select>
+            </div>
+            <div class="container-btn-tickets d-flex justify-content-between">
+                <button type="submit" class="btn btn-success btn-ticket mt-4 p-2">Borrar</button>
+                <button type="submit" class="btn btn-success btn-ticket mt-4 p-2">Enviar</button>
+            </div>         
         </div>
-        <div class="mb-3">
-            <label for="nroCuenta" class="form-label">Nro Cuenta</label>
-            <input type="text" class="form-control" id="nroCuenta">
-        </div>
-        <div class="mb-3">
-            <label for="descripcion" class="form-label">Descripcion</label>
-            <input type="text" class="form-control" id="descripcion">
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+    </div>
+</form>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container-footer">
+      <a href="inicio.html" class="footer-item">Inicio</a>
+    </div>
+</footer>
+
 </body>
 </html>
